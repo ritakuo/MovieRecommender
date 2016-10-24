@@ -34,7 +34,6 @@ public class Multiplication {
             String filePath = conf.get("coOccurrencePath", "./comatrix/part-r-00000");
             Path pt = new Path(filePath);
             FileSystem fs = FileSystem.get(conf);
-            // buffer reader 一行行讀進來, 用filesystem open that path
             BufferedReader br = new BufferedReader(new InputStreamReader(fs.open(pt)));
             String oneLine = br.readLine();// ex: <movieA: movieB\t relation>
 
@@ -49,7 +48,7 @@ public class Multiplication {
             while (oneLine != null) {
                 //input: movieA: movieB\t relation
                 tokens = oneLine.toString().trim().split("\t");
-                movies = tokens[0].split(":");//左邊是movies 會拆成兩個
+                movies = tokens[0].split(":");
                 movie1 = Integer.parseInt(movies[0]);
                 movie2 = Integer.parseInt(movies[1]);
                 int relation = Integer.parseInt(tokens[1]);
