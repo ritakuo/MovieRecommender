@@ -5,6 +5,7 @@ In this project, we use Item collaborative filterting on the similarity between 
 
 
 The steps are follows:
+
 Step 1: Data Pre-processing
 code: DataDividedByUser.java
 taking the input file provided by Netflix, divide data by user_id, and merge data for the same user_id
