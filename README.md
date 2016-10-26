@@ -6,9 +6,7 @@ In this project, we use Item collaborative filterting on the similarity between 
 
 The steps are follows:
 
-Step 1: Data Pre-processing
-
-code: DataDividedByUser.java
+Step 1: Data Pre-processing (DataDividedByUser.java) 
 
 taking the input file provided by Netflix, divide data by user_id, and merge data for the same user_id
 
@@ -21,9 +19,7 @@ output:
 Key: user_id    Value: movie_id:rating
       101                1:9, 2:8 
 
-Step 2: Build Co-occurance matrix 
-
-code: CoOccurrenceMatrixGenerator.java
+Step 2: Build Co-occurance matrix (CoOccurrenceMatrixGenerator.java)
 
 count how many times 2 movie have appeared together 
 
@@ -35,15 +31,11 @@ output:
 key: movie1:movie2  value:# of co-occurance
           1:2               1
          
-Step 3: Based on user's rating for the movie he saw, predict his score on movies he hasn't seem.
-code: Multiplication.java
+Step 3: Based on user's rating for the movie he saw, predict his score on movies he hasn't seem.(Multiplication.java)
 
-3.1 Normalize co-occurance matrix
-
-3.2 predict the score
+Normalize co-occurance matrix and  predict the score
 
 mapper : rating_for_movie2_based_on_movie1=  (rating_for_movie1 * co-occurance[m1][m2])/totoa_occurance_movie2
-
 reducer: combine all score of movie2 
 
 
