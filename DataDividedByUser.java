@@ -24,7 +24,6 @@ public class DataDividedByUser {
         public void map(LongWritable key, Text value, Context context)
             throws IOException, InterruptedException{
             String[] user_movie_rating = value.toString().trim().split(",");
-            //change here for real netflix dataset
             int userID = Integer.parseInt(user_movie_rating[0]);
             String movieID = user_movie_rating[1];
             String rating = user_movie_rating[2];
