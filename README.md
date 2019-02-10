@@ -1,5 +1,5 @@
 # Netflix Movie Recommender
-- The Netflix Prize was an open competition for the best collaborative filtering algorithm to predict user ratings for films, based on previous ratings without any other information about the users or films
+[Netflix Prize data | Kaggle](https://www.kaggle.com/netflix-inc/netflix-prize-data/version/1#README) was an open competition for the best collaborative filtering algorithm to predict user ratings for films, based on previous ratings without any other information about the users or films
 
 ## tl&dr
 - In this project, we calculate one person's rating for one movie he has not seem and make recommendation for top N movies for him. 
@@ -17,7 +17,6 @@
 ![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+8.55.08+AM.png)
 
 ## how the code works
-### 4 mapreduce jobs:
 1. Pre-processing of Netflix raw data 
 2. Data processing
 3. Build co-occurrence matrix
@@ -111,7 +110,7 @@ user_id movie_id:sum(dividedScore)
 ![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+8.46.53+AM.png)
 
 ### Job4: Generate top n recommend list based on user view history and rating
-
+RecommenderListGenerator.java    
 get recommendation user about movie them have not seem
 
 #### input argeument
@@ -134,10 +133,13 @@ user_id movie_id:sum(dividedScore)
 1. Build a map for user id and list of movie he/she has seem (alreadyWatchedList)
 2. Filter out the alreadyWatchedList from output of job3
 3.  Replace movieid with movieName
+
 ```
 user_name, movieName:Rating
 ```
-![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+8.51.56+AM.png)
+
+![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+9.29.07+AM.png)
+
 4. Cumston comparator to return top N movie recommendation for user and their predicted rating for those recommended movie 
  
 ![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+8.55.08+AM.png)
