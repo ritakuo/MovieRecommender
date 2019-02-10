@@ -1,5 +1,5 @@
 # Netflix Movie Recommender
-[Netflix Prize data | Kaggle](https://www.kaggle.com/netflix-inc/netflix-prize-data/version/1#README) was an open competition for the best collaborative filtering algorithm to predict user ratings for films, based on previous ratings without any other information about the users or films
+[Netflix Prize data](https://www.kaggle.com/netflix-inc/netflix-prize-data/version/1#README) was an open competition for the best collaborative filtering algorithm to predict user ratings for films, based on previous ratings without any other information about the users or films
 
 ## tl&dr
 - In this project, we calculate one person's rating for one movie he has not seem and make recommendation for top N movies for him. 
@@ -24,7 +24,7 @@
 5. Generate top N recommend list for user based on his view history and rating
 
 ### Pre-Processing
-[Netflix Prize data | Kaggle](https://www.kaggle.com/netflix-inc/netflix-prize-data/version/1#README) raw data has the following format:
+[Netflix Prize data](https://www.kaggle.com/netflix-inc/netflix-prize-data/version/1#README) raw data has the following format:
 ```
 MovieID:
 UserID, Rating, Date
@@ -106,7 +106,7 @@ divided_score for user on movie_2= (user rating on movie_1) *(num of time movie_
 ```
 user_id movie_id:sum(dividedScore)
 ```
-
+#### job3 output format 
 ![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+8.46.53+AM.png)
 
 ### Job4: Generate top n recommend list based on user view history and rating
@@ -141,6 +141,8 @@ user_name, movieName:Rating
 ![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+9.29.07+AM.png)
 
 4. Cumston comparator to return top N movie recommendation for user and their predicted rating for those recommended movie 
+
+ #### job4 output format 
  
 ![](https://s3-us-west-2.amazonaws.com/donot-delete-github-image/Screen+Shot+2019-02-10+at+8.55.08+AM.png)
    
